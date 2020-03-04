@@ -20,19 +20,26 @@ public class SimplePhysicsController : MonoBehaviour
     public float speed = 5.0f;
     public float rotSpeed = 180.0f;
     public float rollResetSpeed = 0.5f;
-
+    public GameObject myNuker;
+    private bool nuked = false;
     // Update is called once per frame
     void Update()
     {
         vInput = Input.GetAxis("Vertical") * speed;
         hInput = Input.GetAxis("Horizontal") * rotSpeed;
         eInput = -Input.GetAxis("Elevate") * rotSpeed;
-
-
+        
         //ADD CHECK FOR DISTANCE AND TRIGGER THE EXPLOSION HERE:
+        if (transform.position.magnitude > 30.0f)
+        {
+            
+            if(nuked==false)
+            {
 
-
-
+             Instantiate(myNuker, new Vector3(0.0f, 0.05f, 0.0f), Quaternion.identity);
+                nuked = true;
+        }
+        }
 
     }
 

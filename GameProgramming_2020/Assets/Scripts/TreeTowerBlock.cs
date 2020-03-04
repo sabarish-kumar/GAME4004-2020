@@ -119,7 +119,7 @@ namespace GRIDCITY
                         if ((random<5)&&(!cityManager.CheckSlot(x, y+1, z))) //building east (+x direction)
                         {
                             cityManager.SetSlot(x, y+1, z, true);
-                            child = Instantiate(treePrefab, transform.position + Vector3.up * 1.01f, Quaternion.identity, this.transform);                        
+                            child = Instantiate(treePrefab, transform.position + Vector3.right * 1.01f, Quaternion.identity, this.transform);                        
                             int meshNum = myProfile.mainBlocks.Length;
                             int matNum = myProfile.mainMaterials.Length;
                             child.GetComponent<TreeTowerBlock>().Initialize(recursionLevel + 1, myProfile.mainMaterials[Random.Range(0, matNum)], myProfile.mainBlocks[Random.Range(0, meshNum)]);                        
@@ -129,7 +129,7 @@ namespace GRIDCITY
                         if ((random<5)&&(!cityManager.CheckSlot(x, y+1, z))) //building north (+z direction)
                         {
                             cityManager.SetSlot(x, y+1, z, true);
-                            child = Instantiate(treePrefab, transform.position + Vector3.up * 1.01f, Quaternion.identity, this.transform);                          
+                            child = Instantiate(treePrefab, transform.position + Vector3.forward * 1.01f, Quaternion.identity, this.transform);                          
                             int meshNum = myProfile.mainBlocks.Length;
                             int matNum = myProfile.mainMaterials.Length;
                             child.GetComponent<TreeTowerBlock>().Initialize(recursionLevel + 1, myProfile.mainMaterials[Random.Range(0, matNum)], myProfile.mainBlocks[Random.Range(0, meshNum)]);    
@@ -139,7 +139,7 @@ namespace GRIDCITY
                         if ((random<5)&&(!cityManager.CheckSlot(x, y+1, z))) //building west (-x direction)
                         {
                             cityManager.SetSlot(x, y+1, z, true);
-                            child = Instantiate(treePrefab, transform.position + Vector3.up * 1.01f, Quaternion.identity, this.transform);
+                            child = Instantiate(treePrefab, transform.position + Vector3.left * 1.01f, Quaternion.identity, this.transform);
                             int meshNum = myProfile.mainBlocks.Length;
                             int matNum = myProfile.mainMaterials.Length;
                             child.GetComponent<TreeTowerBlock>().Initialize(recursionLevel + 1, myProfile.mainMaterials[Random.Range(0, matNum)], myProfile.mainBlocks[Random.Range(0, meshNum)]);    
@@ -149,7 +149,7 @@ namespace GRIDCITY
                         if ((random<5)&& (!cityManager.CheckSlot(x, y+1, z))) //building south (-z direction)
                         {
                             cityManager.SetSlot(x, y+1, z, true);
-                            child = Instantiate(treePrefab, transform.position + Vector3.up * 1.01f, Quaternion.identity, this.transform);                          
+                            child = Instantiate(treePrefab, transform.position + Vector3.back * 1.01f, Quaternion.identity, this.transform);                          
                             int meshNum = myProfile.mainBlocks.Length;
                             int matNum = myProfile.mainMaterials.Length;
                             child.GetComponent<TreeTowerBlock>().Initialize(recursionLevel + 1, myProfile.mainMaterials[Random.Range(0, matNum)], myProfile.mainBlocks[Random.Range(0, meshNum)]);
